@@ -495,6 +495,33 @@ Not directly. It requires [Windows Subsystem for Linux (WSL2)](https://learn.mic
 
 </details>
 
+<details>
+<summary>PowerShell says <code>npm</code> or <code>codex</code> is not recognized. How do I fix that?</summary>
+
+This usually means Node.js (and therefore `npm`) is not installed in the shell you're using.
+
+On Windows, Codex is supported via WSL2:
+
+1. Install WSL2 and open your Linux distro terminal (for example, Ubuntu).
+2. Install Node.js 22+ inside WSL2.
+3. Run:
+
+   ```bash
+   npm install -g @openai/codex@latest
+   ```
+
+4. Verify:
+
+   ```bash
+   node -v
+   npm -v
+   codex --version
+   ```
+
+If `npm` works but `codex` does not, restart your terminal so your global npm bin path is reloaded.
+
+</details>
+
 ---
 
 ## Zero Data Retention (ZDR) Usage
